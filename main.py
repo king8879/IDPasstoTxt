@@ -2410,8 +2410,8 @@ async def account_login(bot: Client, m: Message):
             key = "638udh3829162018".encode("utf8")
             iv = "fedcba9876543210".encode("utf8")
             ciphertext = bytearray.fromhex((b64.encode()).hex())
-            cipher = new(key, MODE_CBC, iv)
-            plaintext = unpad(cipher.decrypt(ciphertext), block_size)
+            cipher = (key, MODE_CBC, iv)
+            plaintext = (cipher.decrypt(ciphertext), block_size)
             b = plaintext.decode('utf-8')
             cc0 = f"{tid}:{b}"
             if len(f'{cool2}{cc0}') > 9999:
