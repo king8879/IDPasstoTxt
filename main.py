@@ -2409,7 +2409,7 @@ async def account_login(bot: Client, m: Message):
             zz = len(tid)
             key = "638udh3829162018".encode("utf8")
             iv = "fedcba9876543210".encode("utf8")
-            ciphertext = bytearray.fromhex(b64decode(b64.encode()).hex())
+            ciphertext = bytearray.fromhex((b64.encode()).hex())
             cipher = AES.new(key, AES.MODE_CBC, iv)
             plaintext = unpad(cipher.decrypt(ciphertext), AES.block_size)
             b = plaintext.decode('utf-8')
